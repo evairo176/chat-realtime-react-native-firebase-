@@ -2,22 +2,24 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 // import Abc from "./src/component/chat/Abc";
 import ChatList from "./src/component/chat/ChatList";
+import ChatScreen from "./src/component/screen/ChatScreen";
 
 export default function App() {
   const chat = {
-    id:"1",
-    user:{
-      image:"https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/lukas.jpeg",
-      name:"Dicki Prasetya"
+    id: "1",
+    user: {
+      image:
+        "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/lukas.jpeg",
+      name: "Dicki Prasetya",
     },
-    lastMessage:{
-      text:"Hello, world",
-      createdAt:"08:33"
-    }
-  }
+    lastMessage: {
+      text: "Hello, world",
+      createdAt: "08:33",
+    },
+  };
   return (
     <View style={styles.container}>
-      <ChatList chat={chat} />
+      <ChatScreen />
       <StatusBar style="auto" />
     </View>
   );
