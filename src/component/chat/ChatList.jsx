@@ -1,27 +1,24 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 
-const ChatList = () => {
+const ChatList = ({ chat }) => {
   return (
     <View style={styles.container}>
       <Image
         source={{
-          uri: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/lukas.jpeg",
+          uri: `${chat?.user?.image}`,
         }}
         style={styles.image}
       />
       <View style={styles.content}>
         <View style={styles.row}>
           <Text numberOfLines={1} style={styles.name}>
-            Dicki
+            {chat?.user?.name}
           </Text>
-          <Text style={styles.time}>8:30</Text>
+          <Text style={styles.time}>{chat?.lastMessage?.createdAt}</Text>
         </View>
         <Text numberOfLines={2} style={styles.chat}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat hic
-          natus, praesentium, cupiditate incidunt assumenda obcaecati accusamus
-          magni ducimus nobis nesciunt ipsam numquam voluptate, commodi
-          molestias ipsum rerum exercitationem aut?
+          {chat?.lastMessage?.text}
         </Text>
       </View>
     </View>
